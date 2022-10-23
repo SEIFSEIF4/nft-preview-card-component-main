@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Outfit:wght@300;400;600&display=swap");
+/* Variables */
+:root {
+	/* Primary */
+	--blue-color: hsl(215, 51%, 70%);
+	--Cyan-color: hsl(178, 100%, 50%);
+	/* Neutral */
+	--main-color: hsl(217, 54%, 11%);
+	--card-color: hsl(216, 50%, 16%);
+	--line-color: hsl(215, 32%, 27%);
+	/* Font */
+	--paragraph-font-size: 18px;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Big Shoulders Display", cursive;
+	font-family: "Outfit", sans-serif;
+	background-color: var(--PaleBlue-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: var(--main-color);
+}
+
+.container {
+	max-width: 17.75rem;
+	margin: 1rem;
+	padding: 1rem;
+	overflow: hidden;
+	border-radius: 10px;
+	background-color: var(--Card-color);
+	border: 1px solid var(--line-color);
+	box-shadow: 11px 10px 5px 2px rgba(0, 0, 0, 0.507);
+	-webkit-box-shadow: 11px 10px 5px 2px rgba(0, 0, 0, 0.507);
+	-moz-box-shadow: 11px 10px 5px 2px rgba(0, 0, 0, 0.507);
+	transition: 0.3s;
+}
+.container .pic {
+	position: relative;
+}
+.container .pic img {
+	max-width: 100%;
+}
+
+.container .pic::after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 2%);
+	top: 0;
+	left: 0;
+	background-image: url(images/icon-view.svg);
+	background-color: rgb(130 183 219 / 42%);
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0;
+}
+
+.container .pic:hover::after {
+	opacity: 1;
+}
+
+.container .text {
+	color: white;
+}
+
+.container .text h1 {
+	padding: 0.875rem 0;
+	font-size: var(--paragraph-font-size);
+	cursor: pointer;
+}
+
+.container .text p {
+	font-size: smaller;
+	line-height: 1.5;
+	font-weight: 100;
+	opacity: 0.5;
+	padding-bottom: 0.625rem;
+}
+
+.container .icon {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--line-color);
+	padding-bottom: 1rem;
+}
+
+.container .icon span {
+	font-size: calc(var(--paragraph-font-size) - 3px);
+	color: var(--Cyan-color);
+}
+.container .icon p:nth-child(2) {
+	font-size: calc(var(--paragraph-font-size) - 3px);
+	color: white;
+	font-weight: 300;
+	opacity: 0.8;
+}
+
+.container .icon span::before {
+	content: "";
+	display: inline-block;
+	width: 11px;
+	height: 20px;
+	background-image: url(images/icon-ethereum.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align: middle;
+	margin-right: 5px;
+	margin-bottom: 0.3125rem;
+}
+.container .icon p:nth-child(2)::before {
+	content: "";
+	display: inline-block;
+	background-image: url(images/icon-clock.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 14px;
+	height: 14px;
+	vertical-align: middle;
+	margin-right: 0.3125rem;
+	margin-bottom: 0.3125rem;
+}
+
+.container .pfp {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.container .pfp img {
+	margin: 0.5rem 0.625rem 0 0;
+	max-width: 13%;
+	border: 1px solid white;
+	border-radius: 50%;
+	position: relative;
+}
+.container .pfp p {
+	color: var(--blue-color);
+	margin-top: 0.375rem;
+}
+
+.container .pfp span {
+	color: white;
+	font-family: "Outfit", sans-serif;
+	cursor: pointer;
+}
+.container .pfp span:hover,
+.container .text h1:hover {
+	color: var(--Cyan-color);
+}
